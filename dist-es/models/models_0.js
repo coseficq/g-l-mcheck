@@ -1,293 +1,160 @@
-import { CognitoIdentityServiceException as __BaseException } from "./CognitoIdentityServiceException";
-export var AmbiguousRoleResolutionType;
-(function (AmbiguousRoleResolutionType) {
-    AmbiguousRoleResolutionType["AUTHENTICATED_ROLE"] = "AuthenticatedRole";
-    AmbiguousRoleResolutionType["DENY"] = "Deny";
-})(AmbiguousRoleResolutionType || (AmbiguousRoleResolutionType = {}));
-export class InternalErrorException extends __BaseException {
+import { STSServiceException as __BaseException } from "./STSServiceException";
+export class ExpiredTokenException extends __BaseException {
     constructor(opts) {
         super({
-            name: "InternalErrorException",
-            $fault: "server",
-            ...opts,
-        });
-        this.name = "InternalErrorException";
-        this.$fault = "server";
-        Object.setPrototypeOf(this, InternalErrorException.prototype);
-    }
-}
-export class InvalidParameterException extends __BaseException {
-    constructor(opts) {
-        super({
-            name: "InvalidParameterException",
+            name: "ExpiredTokenException",
             $fault: "client",
             ...opts,
         });
-        this.name = "InvalidParameterException";
+        this.name = "ExpiredTokenException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, InvalidParameterException.prototype);
+        Object.setPrototypeOf(this, ExpiredTokenException.prototype);
     }
 }
-export class LimitExceededException extends __BaseException {
+export class MalformedPolicyDocumentException extends __BaseException {
     constructor(opts) {
         super({
-            name: "LimitExceededException",
+            name: "MalformedPolicyDocumentException",
             $fault: "client",
             ...opts,
         });
-        this.name = "LimitExceededException";
+        this.name = "MalformedPolicyDocumentException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, LimitExceededException.prototype);
+        Object.setPrototypeOf(this, MalformedPolicyDocumentException.prototype);
     }
 }
-export class NotAuthorizedException extends __BaseException {
+export class PackedPolicyTooLargeException extends __BaseException {
     constructor(opts) {
         super({
-            name: "NotAuthorizedException",
+            name: "PackedPolicyTooLargeException",
             $fault: "client",
             ...opts,
         });
-        this.name = "NotAuthorizedException";
+        this.name = "PackedPolicyTooLargeException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, NotAuthorizedException.prototype);
+        Object.setPrototypeOf(this, PackedPolicyTooLargeException.prototype);
     }
 }
-export class ResourceConflictException extends __BaseException {
+export class RegionDisabledException extends __BaseException {
     constructor(opts) {
         super({
-            name: "ResourceConflictException",
+            name: "RegionDisabledException",
             $fault: "client",
             ...opts,
         });
-        this.name = "ResourceConflictException";
+        this.name = "RegionDisabledException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, ResourceConflictException.prototype);
+        Object.setPrototypeOf(this, RegionDisabledException.prototype);
     }
 }
-export class TooManyRequestsException extends __BaseException {
+export class IDPRejectedClaimException extends __BaseException {
     constructor(opts) {
         super({
-            name: "TooManyRequestsException",
+            name: "IDPRejectedClaimException",
             $fault: "client",
             ...opts,
         });
-        this.name = "TooManyRequestsException";
+        this.name = "IDPRejectedClaimException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, TooManyRequestsException.prototype);
+        Object.setPrototypeOf(this, IDPRejectedClaimException.prototype);
     }
 }
-export var ErrorCode;
-(function (ErrorCode) {
-    ErrorCode["ACCESS_DENIED"] = "AccessDenied";
-    ErrorCode["INTERNAL_SERVER_ERROR"] = "InternalServerError";
-})(ErrorCode || (ErrorCode = {}));
-export class ResourceNotFoundException extends __BaseException {
+export class InvalidIdentityTokenException extends __BaseException {
     constructor(opts) {
         super({
-            name: "ResourceNotFoundException",
+            name: "InvalidIdentityTokenException",
             $fault: "client",
             ...opts,
         });
-        this.name = "ResourceNotFoundException";
+        this.name = "InvalidIdentityTokenException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, ResourceNotFoundException.prototype);
+        Object.setPrototypeOf(this, InvalidIdentityTokenException.prototype);
     }
 }
-export class ExternalServiceException extends __BaseException {
+export class IDPCommunicationErrorException extends __BaseException {
     constructor(opts) {
         super({
-            name: "ExternalServiceException",
+            name: "IDPCommunicationErrorException",
             $fault: "client",
             ...opts,
         });
-        this.name = "ExternalServiceException";
+        this.name = "IDPCommunicationErrorException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, ExternalServiceException.prototype);
+        Object.setPrototypeOf(this, IDPCommunicationErrorException.prototype);
     }
 }
-export class InvalidIdentityPoolConfigurationException extends __BaseException {
+export class InvalidAuthorizationMessageException extends __BaseException {
     constructor(opts) {
         super({
-            name: "InvalidIdentityPoolConfigurationException",
+            name: "InvalidAuthorizationMessageException",
             $fault: "client",
             ...opts,
         });
-        this.name = "InvalidIdentityPoolConfigurationException";
+        this.name = "InvalidAuthorizationMessageException";
         this.$fault = "client";
-        Object.setPrototypeOf(this, InvalidIdentityPoolConfigurationException.prototype);
+        Object.setPrototypeOf(this, InvalidAuthorizationMessageException.prototype);
     }
 }
-export var MappingRuleMatchType;
-(function (MappingRuleMatchType) {
-    MappingRuleMatchType["CONTAINS"] = "Contains";
-    MappingRuleMatchType["EQUALS"] = "Equals";
-    MappingRuleMatchType["NOT_EQUAL"] = "NotEqual";
-    MappingRuleMatchType["STARTS_WITH"] = "StartsWith";
-})(MappingRuleMatchType || (MappingRuleMatchType = {}));
-export var RoleMappingType;
-(function (RoleMappingType) {
-    RoleMappingType["RULES"] = "Rules";
-    RoleMappingType["TOKEN"] = "Token";
-})(RoleMappingType || (RoleMappingType = {}));
-export class DeveloperUserAlreadyRegisteredException extends __BaseException {
-    constructor(opts) {
-        super({
-            name: "DeveloperUserAlreadyRegisteredException",
-            $fault: "client",
-            ...opts,
-        });
-        this.name = "DeveloperUserAlreadyRegisteredException";
-        this.$fault = "client";
-        Object.setPrototypeOf(this, DeveloperUserAlreadyRegisteredException.prototype);
-    }
-}
-export class ConcurrentModificationException extends __BaseException {
-    constructor(opts) {
-        super({
-            name: "ConcurrentModificationException",
-            $fault: "client",
-            ...opts,
-        });
-        this.name = "ConcurrentModificationException";
-        this.$fault = "client";
-        Object.setPrototypeOf(this, ConcurrentModificationException.prototype);
-    }
-}
-export const CognitoIdentityProviderFilterSensitiveLog = (obj) => ({
+export const AssumedRoleUserFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const CreateIdentityPoolInputFilterSensitiveLog = (obj) => ({
+export const PolicyDescriptorTypeFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const IdentityPoolFilterSensitiveLog = (obj) => ({
+export const TagFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const DeleteIdentitiesInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const UnprocessedIdentityIdFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const DeleteIdentitiesResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const DeleteIdentityPoolInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const DescribeIdentityInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const IdentityDescriptionFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const DescribeIdentityPoolInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const GetCredentialsForIdentityInputFilterSensitiveLog = (obj) => ({
+export const AssumeRoleRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
 export const CredentialsFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetCredentialsForIdentityResponseFilterSensitiveLog = (obj) => ({
+export const AssumeRoleResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetIdInputFilterSensitiveLog = (obj) => ({
+export const AssumeRoleWithSAMLRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetIdResponseFilterSensitiveLog = (obj) => ({
+export const AssumeRoleWithSAMLResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetIdentityPoolRolesInputFilterSensitiveLog = (obj) => ({
+export const AssumeRoleWithWebIdentityRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const MappingRuleFilterSensitiveLog = (obj) => ({
+export const AssumeRoleWithWebIdentityResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const RulesConfigurationTypeFilterSensitiveLog = (obj) => ({
+export const DecodeAuthorizationMessageRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const RoleMappingFilterSensitiveLog = (obj) => ({
+export const DecodeAuthorizationMessageResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetIdentityPoolRolesResponseFilterSensitiveLog = (obj) => ({
+export const GetAccessKeyInfoRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetOpenIdTokenInputFilterSensitiveLog = (obj) => ({
+export const GetAccessKeyInfoResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetOpenIdTokenResponseFilterSensitiveLog = (obj) => ({
+export const GetCallerIdentityRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetOpenIdTokenForDeveloperIdentityInputFilterSensitiveLog = (obj) => ({
+export const GetCallerIdentityResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetOpenIdTokenForDeveloperIdentityResponseFilterSensitiveLog = (obj) => ({
+export const GetFederationTokenRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetPrincipalTagAttributeMapInputFilterSensitiveLog = (obj) => ({
+export const FederatedUserFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const GetPrincipalTagAttributeMapResponseFilterSensitiveLog = (obj) => ({
+export const GetFederationTokenResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const ListIdentitiesInputFilterSensitiveLog = (obj) => ({
+export const GetSessionTokenRequestFilterSensitiveLog = (obj) => ({
     ...obj,
 });
-export const ListIdentitiesResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const ListIdentityPoolsInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const IdentityPoolShortDescriptionFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const ListIdentityPoolsResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const ListTagsForResourceInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const ListTagsForResourceResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const LookupDeveloperIdentityInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const LookupDeveloperIdentityResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const MergeDeveloperIdentitiesInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const MergeDeveloperIdentitiesResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const SetIdentityPoolRolesInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const SetPrincipalTagAttributeMapInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const SetPrincipalTagAttributeMapResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const TagResourceInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const TagResourceResponseFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const UnlinkDeveloperIdentityInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const UnlinkIdentityInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const UntagResourceInputFilterSensitiveLog = (obj) => ({
-    ...obj,
-});
-export const UntagResourceResponseFilterSensitiveLog = (obj) => ({
+export const GetSessionTokenResponseFilterSensitiveLog = (obj) => ({
     ...obj,
 });

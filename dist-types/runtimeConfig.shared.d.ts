@@ -1,8 +1,8 @@
-import { CognitoIdentityClientConfig } from "./CognitoIdentityClient";
+import { SSOOIDCClientConfig } from "./SSOOIDCClient";
 /**
  * @internal
  */
-export declare const getRuntimeConfig: (config: CognitoIdentityClientConfig) => {
+export declare const getRuntimeConfig: (config: SSOOIDCClientConfig) => {
     apiVersion: string;
     base64Decoder: import("@aws-sdk/types").Decoder;
     base64Encoder: import("@aws-sdk/types").Encoder;

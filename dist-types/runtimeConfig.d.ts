@@ -1,13 +1,12 @@
 import { NodeHttpHandler as RequestHandler } from "@aws-sdk/node-http-handler";
-import { CognitoIdentityClientConfig } from "./CognitoIdentityClient";
+import { SSOOIDCClientConfig } from "./SSOOIDCClient";
 /**
  * @internal
  */
-export declare const getRuntimeConfig: (config: CognitoIdentityClientConfig) => {
+export declare const getRuntimeConfig: (config: SSOOIDCClientConfig) => {
     runtime: string;
     defaultsMode: import("@aws-sdk/types").Provider<import("@aws-sdk/smithy-client").ResolvedDefaultsMode>;
     bodyLengthChecker: import("@aws-sdk/types").BodyLengthCalculator;
-    credentialDefaultProvider: (input: any) => import("@aws-sdk/types").Provider<import("@aws-sdk/types").Credentials>;
     defaultUserAgentProvider: import("@aws-sdk/types").Provider<import("@aws-sdk/types").UserAgent>;
     maxAttempts: number | import("@aws-sdk/types").Provider<number>;
     region: string | import("@aws-sdk/types").Provider<string>;
@@ -32,11 +31,5 @@ export declare const getRuntimeConfig: (config: CognitoIdentityClientConfig) => 
     }) => import("@aws-sdk/types").EndpointV2;
     tls?: boolean | undefined;
     retryStrategy?: import("@aws-sdk/types").RetryStrategy | import("@aws-sdk/types").RetryStrategyV2 | undefined;
-    credentials?: import("@aws-sdk/types").AwsCredentialIdentity | import("@aws-sdk/types").Provider<import("@aws-sdk/types").AwsCredentialIdentity> | undefined;
-    signer?: import("@aws-sdk/types").RequestSigner | ((authScheme?: import("@aws-sdk/types").AuthScheme | undefined) => Promise<import("@aws-sdk/types").RequestSigner>) | undefined;
-    signingEscapePath?: boolean | undefined;
-    systemClockOffset?: number | undefined;
-    signingRegion?: string | undefined;
-    signerConstructor?: (new (options: import("@aws-sdk/signature-v4").SignatureV4Init & import("@aws-sdk/signature-v4").SignatureV4CryptoInit) => import("@aws-sdk/types").RequestSigner) | undefined;
     customUserAgent?: string | import("@aws-sdk/types").UserAgent | undefined;
 };

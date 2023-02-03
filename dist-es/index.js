@@ -1,6 +1,6 @@
-export * from "./CognitoIdentity";
-export * from "./CognitoIdentityClient";
+export * from "./STS";
+export * from "./STSClient";
 export * from "./commands";
+export * from "./defaultRoleAssumers";
 export * from "./models";
-export * from "./pagination";
-export { CognitoIdentityServiceException } from "./models/CognitoIdentityServiceException";
+export { STSServiceException } from "./models/STSServiceException";
