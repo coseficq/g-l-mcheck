@@ -1,14 +1,17 @@
-import { AwsCredentialIdentity, Provider } from "@aws-sdk/types";
-import { CognitoProviderParameters } from "./CognitoProviderParameters";
-export interface CognitoIdentityCredentials extends AwsCredentialIdentity {
-  identityId: string;
+import { CognitoIdentityClientConfig } from "@aws-sdk/client-cognito-identity";
+import {
+  CognitoIdentityCredentialProvider as _CognitoIdentityCredentialProvider,
+  FromCognitoIdentityParameters as _FromCognitoIdentityParameters,
+} from "@aws-sdk/credential-provider-cognito-identity";
+export interface FromCognitoIdentityParameters
+  extends Pick<
+    _FromCognitoIdentityParameters,
+    Exclude<keyof _FromCognitoIdentityParameters, "client">
+  > {
+  clientConfig?: CognitoIdentityClientConfig;
 }
 export declare type CognitoIdentityCredentialProvider =
-  Provider<CognitoIdentityCredentials>;
-export declare function fromCognitoIdentity(
-  parameters: FromCognitoIdentityParameters
-): CognitoIdentityCredentialProvider;
-export interface FromCognitoIdentityParameters
-  extends CognitoProviderParameters {
-  identityId: string;
-}
+  _CognitoIdentityCredentialProvider;
+export declare const fromCognitoIdentity: (
+  options: FromCognitoIdentityParameters
+) => _CognitoIdentityCredentialProvider;

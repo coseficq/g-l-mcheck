@@ -1,19 +1,15 @@
-import { CognitoProviderParameters } from "./CognitoProviderParameters";
-import { CognitoIdentityCredentialProvider } from "./fromCognitoIdentity";
-import { Storage } from "./Storage";
-export declare function fromCognitoIdentityPool({
-  accountId,
-  cache,
-  client,
-  customRoleArn,
-  identityPoolId,
-  logins,
-  userIdentifier,
-}: FromCognitoIdentityPoolParameters): CognitoIdentityCredentialProvider;
+import { CognitoIdentityClientConfig } from "@aws-sdk/client-cognito-identity";
+import {
+  CognitoIdentityCredentialProvider,
+  FromCognitoIdentityPoolParameters as _FromCognitoIdentityPoolParameters,
+} from "@aws-sdk/credential-provider-cognito-identity";
 export interface FromCognitoIdentityPoolParameters
-  extends CognitoProviderParameters {
-  accountId?: string;
-  cache?: Storage;
-  identityPoolId: string;
-  userIdentifier?: string;
+  extends Pick<
+    _FromCognitoIdentityPoolParameters,
+    Exclude<keyof _FromCognitoIdentityPoolParameters, "client">
+  > {
+  clientConfig?: CognitoIdentityClientConfig;
 }
+export declare const fromCognitoIdentityPool: (
+  options: FromCognitoIdentityPoolParameters
+) => CognitoIdentityCredentialProvider;

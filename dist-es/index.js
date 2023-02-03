@@ -1,1 +1,1 @@
-export * from "./fromIni";
+export * from "./fromProcess";
