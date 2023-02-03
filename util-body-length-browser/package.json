@@ -1,10 +1,7 @@
 {
-  "name": "@aws-sdk/util-endpoints",
-  "version": "3.226.0",
-  "description": "Utilities to help with endpoint resolution",
-  "main": "./dist-cjs/index.js",
-  "module": "./dist-es/index.js",
-  "types": "./dist-types/index.d.ts",
+  "name": "@aws-sdk/util-body-length-browser",
+  "description": "Determines the length of a request body in browsers",
+  "version": "3.188.0",
   "scripts": {
     "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
     "build:cjs": "tsc -p tsconfig.cjs.json",
@@ -15,17 +12,16 @@
     "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
     "test": "jest"
   },
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "types": "./dist-types/index.d.ts",
   "author": {
     "name": "AWS SDK for JavaScript Team",
     "url": "https://aws.amazon.com/javascript/"
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@aws-sdk/types": "3.226.0",
     "tslib": "^2.3.1"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   },
   "typesVersions": {
     "<4.0": {
@@ -37,11 +33,11 @@
   "files": [
     "dist-*"
   ],
-  "homepage": "https://github.com/aws/aws-sdk-js-v3/tree/main/packages/util-endpoints",
+  "homepage": "https://github.com/aws/aws-sdk-js-v3/tree/main/packages/util-body-length-browser",
   "repository": {
     "type": "git",
     "url": "https://github.com/aws/aws-sdk-js-v3.git",
-    "directory": "packages/util-endpoints"
+    "directory": "packages/util-body-length-browser"
   },
   "devDependencies": {
     "@tsconfig/recommended": "1.0.1",
